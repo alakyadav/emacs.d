@@ -84,7 +84,10 @@
    (quote
     ("9b59e147dbbde5e638ea1cde5ec0a358d5f269d27bd2b893a0947c4a867e14c1" default)))
  '(minimap-dedicated-window t)
- '(minimap-minimum-width 10))
+ '(minimap-minimum-width 10)
+ '(package-selected-packages
+   (quote
+    (tabbar sublime-themes sr-speedbar py-autopep8 monokai-theme minimap irony-eldoc ggtags flycheck elpy company-irony-c-headers company-irony better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
