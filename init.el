@@ -37,7 +37,7 @@
 ;; --------------------------------------
 
 (setq inhibit-startup-message t) ;; hide the startup message
-(load-theme 'brin t) ;; load brin theme
+(load-theme 'monokai t) ;; load monokai //brin theme
 (global-linum-mode t) ;; enable line numbers globally
 (elpy-enable)
 
@@ -82,12 +82,16 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("9b59e147dbbde5e638ea1cde5ec0a358d5f269d27bd2b893a0947c4a867e14c1" default)))
+    ("f81a9aabc6a70441e4a742dfd6d10b2bae1088830dc7aba9c9922f4b1bd2ba50" "9b59e147dbbde5e638ea1cde5ec0a358d5f269d27bd2b893a0947c4a867e14c1" default)))
+ '(erc-modules
+   (quote
+    (autojoin button completion fill irccontrols list match menu move-to-prompt netsplit networks noncommands readonly ring stamp track)))
+ '(linum-format " %5i ")
  '(minimap-dedicated-window t)
  '(minimap-minimum-width 10)
  '(package-selected-packages
    (quote
-    (tabbar sublime-themes sr-speedbar py-autopep8 monokai-theme minimap irony-eldoc ggtags flycheck elpy company-irony-c-headers company-irony better-defaults))))
+    (js2-mode web-mode tabbar sublime-themes sr-speedbar py-autopep8 monokai-theme minimap irony-eldoc ggtags flycheck elpy company-irony-c-headers company-irony better-defaults))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -134,7 +138,21 @@
     
 (setq scroll-step 1) ;; keyboard scroll one line at a time
 
+;; web-mode
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
 (global-set-key (kbd "C-<down>") 'enlarge-window)
 (global-set-key (kbd "C-<up>") 'shrink-window)
 (global-set-key (kbd "C-<left>") 'enlarge-window-horizontally)
 (global-set-key (kbd "C-<right>") 'shrink-window-horizontally)
+(put 'erase-buffer 'disabled nil)
